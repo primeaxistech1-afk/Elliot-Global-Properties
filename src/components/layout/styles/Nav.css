@@ -1,0 +1,406 @@
+/* ============================================================
+   ELLIOT GLOBAL PROPERTIES — UNIVERSAL NAV
+   Nav.css
+   ============================================================ */
+
+/* ─── Shell ──────────────────────────────────────────────────────────────── */
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--nav-height);
+    z-index: var(--z-nav);
+    padding: 2.8rem 1rem;
+    transition:
+        background-color 0.4s var(--ease-premium),
+        backdrop-filter 0.4s var(--ease-premium),
+        box-shadow 0.4s var(--ease-premium);
+}
+
+/* Transparent state — over hero */
+.nav--transparent {
+    background-color: transparent;
+    backdrop-filter: none;
+    box-shadow: none;
+}
+
+/* Solid state — scrolled or non-hero pages */
+.nav--solid {
+    background-color: rgba(248, 247, 245, 0.96);
+    backdrop-filter: blur(12px) saturate(1.4);
+    -webkit-backdrop-filter: blur(12px) saturate(1.4);
+    box-shadow:
+        0 1px 0 rgba(209, 205, 198, 0.6),
+        0 4px 24px rgba(13, 13, 13, 0.05);
+}
+
+/* ─── Inner layout ───────────────────────────────────────────────────────── */
+
+.nav__inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-8);
+}
+
+/* ─── Logo ───────────────────────────────────────────────────────────────── */
+
+.nav__logo {
+    margin-top: .8rem;
+}
+
+.nav__logo-img{
+    width: 15rem;
+}
+
+.nav__logo:hover {
+    opacity: 0.8;
+}
+/* ─── Desktop links ──────────────────────────────────────────────────────── */
+
+.nav__links {
+    display: flex;
+    align-items: center;
+    gap: clamp(28px, 3.5vw, 48px);
+    /* Center in remaining space */
+    flex: 1;
+    justify-content: center;
+}
+
+.nav__link {
+    position: relative;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(248, 247, 245, 0.75);
+    padding-bottom: 3px;
+    transition: color 0.25s ease;
+}
+
+.nav__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--signal);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s var(--ease-premium);
+}
+
+.nav__link:hover {
+    color: var(--white);
+}
+
+.nav__link:hover::after,
+.nav__link--active::after {
+    transform: scaleX(1);
+}
+
+.nav__link--active {
+    color: var(--white);
+}
+
+/* Solid state — link colors flip */
+.nav--solid .nav__link {
+    color: var(--steel);
+}
+
+.nav--solid .nav__link:hover {
+    color: var(--ink);
+}
+
+.nav--solid .nav__link--active {
+    color: var(--ink);
+}
+
+/* ─── Right side (CTA + hamburger) ──────────────────────────────────────── */
+
+.nav__right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    flex-shrink: 0;
+}
+
+/* ─── CTA ────────────────────────────────────────────────────────────────── */
+
+.nav__cta {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--signal);
+    background-color: var(--white);
+    padding: 8px 18px;
+    border: 2px solid transparent;
+    box-shadow: 2px 2px transparent;
+    transition: all .3s ease;
+    overflow: hidden;
+}
+
+
+.nav--solid .nav__cta {
+    border: 2px solid var(--signal);
+    box-shadow: 4px 4px var(--signal);
+}
+
+.nav
+
+
+.nav__cta:hover {
+    color: var(--white);
+    border-color: var(--signal);
+}
+
+.nav__cta:hover::before {
+    transform: scaleX(1);
+}
+
+.nav__cta-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--signal);
+    flex-shrink: 0;
+    transition: background-color 0.25s ease;
+}
+
+.nav__cta:hover .nav__cta-dot {
+    background-color: var(--white);
+}
+
+/* ─── Hamburger button ───────────────────────────────────────────────────── */
+
+.nav__hamburger {
+    display: none;
+    /* hidden desktop */
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: none;
+    flex-shrink: 0;
+}
+
+.nav__hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 22px;
+}
+
+.nav__hamburger-icon span {
+    display: block;
+    height: 1px;
+    background-color: var(--white);
+    transition:
+        transform 0.35s var(--ease-premium),
+        opacity 0.25s ease,
+        width 0.35s var(--ease-premium);
+    transform-origin: left;
+}
+
+.nav__hamburger-icon span:nth-child(1) {
+    width: 22px;
+}
+
+.nav__hamburger-icon span:nth-child(2) {
+    width: 14px;
+}
+
+.nav__hamburger-icon span:nth-child(3) {
+    width: 18px;
+}
+
+/* Open state — morphs to X */
+.nav__hamburger-icon--open span:nth-child(1) {
+    transform: rotate(40deg) translateY(-1px);
+    width: 22px;
+}
+
+.nav__hamburger-icon--open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.nav__hamburger-icon--open span:nth-child(3) {
+    transform: rotate(-40deg) translateY(1px);
+    width: 22px;
+}
+
+/* Solid state — hamburger bars darken */
+.nav--solid .nav__hamburger-icon span {
+    background-color: var(--ink);
+}
+
+/* ─── Mobile overlay ─────────────────────────────────────────────────────── */
+
+.nav__mobile-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: calc(var(--z-nav) - 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-16) clamp(28px, 8vw, 64px);
+    pointer-events: none;
+    visibility: hidden;
+    transition: visibility 0s linear 0.55s;
+}
+
+.nav__mobile-overlay--open {
+    pointer-events: all;
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+/* Animated dark background fill */
+.nav__mobile-bg {
+    position: absolute;
+    inset: 0;
+    background-color: var(--canvas);
+    color: var(--void);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s var(--ease-premium);
+}
+
+.nav__mobile-overlay--open .nav__mobile-bg {
+    transform: scaleY(1);
+}
+
+/* Mobile nav links */
+.nav__mobile-links {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    z-index: 1;
+}
+
+.nav__mobile-link {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 10vw, 5rem);
+    font-weight: 300;
+    color: var(--void);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        opacity 0.45s var(--ease-premium),
+        transform 0.45s var(--ease-premium),
+        color 0.2s ease;
+}
+
+.nav__mobile-overlay--open .nav__mobile-link {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav__mobile-link:hover,
+.nav__mobile-link--active {
+    color: var(--text-muted);
+}
+
+.nav__mobile-link--active {
+    color: var(--signal) !important;
+}
+
+.nav__mobile-link-index {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--signal);
+    opacity: 0.7;
+    margin-top: 8px;
+    flex-shrink: 0;
+}
+
+/* Mobile footer label */
+.nav__mobile-footer {
+    position: absolute;
+    bottom: clamp(24px, 5vh, 48px);
+    left: clamp(28px, 8vw, 64px);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.4s ease 0.45s;
+}
+
+.nav__mobile-overlay--open .nav__mobile-footer {
+    opacity: 1;
+}
+
+.nav__mobile-footer-text {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(248, 247, 245, 0.2);
+}
+
+/* ─── Backdrop ───────────────────────────────────────────────────────────── */
+
+.nav__backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: calc(var(--z-nav) - 2);
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    .nav {
+        height: var(--nav-height-mobile);
+    }
+
+    .nav__links {
+        display: none;
+    }
+
+    .nav__cta {
+        display: none;
+    }
+
+    .nav__hamburger {
+        display: flex;
+    }
+}
+
+/* ─── Reduced motion ─────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .nav,
+    .nav__link::after,
+    .nav__cta::before,
+    .nav__hamburger-icon span,
+    .nav__mobile-bg,
+    .nav__mobile-link,
+    .nav__mobile-footer {
+        transition-duration: 0.01ms !important;
+    }
+}

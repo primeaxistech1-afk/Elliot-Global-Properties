@@ -1,0 +1,443 @@
+/* ============================================================
+   ELLIOT GLOBAL PROPERTIES — DESIGN TOKENS
+   tokens.css
+   ============================================================ */
+
+:root {
+
+   /* ----------------------------------------------------------
+     COLORS
+  ---------------------------------------------------------- */
+
+   /* Core Palette */
+   --canvas: #F8F7F5;
+   /* Primary background — warm off-white, architectural paper */
+   --ink: #0D0D0D;
+   /* Primary text, headlines */
+   --steel: #3A3A3A;
+   /* Secondary text, nav links */
+   --smoke: #E8E6E1;
+   /* Section backgrounds, card surfaces */
+   --void: #111111;
+   /* Footer, dark sections, stats band */
+   --signal: #C0001A;
+   /* Accent red — CTAs, tags, key moments only */
+   --signal-muted: #8C0013;
+   /* Hover states, pressed CTAs */
+   --wire: #D1CDC6;
+   /* Borders, dividers, SVG lines */
+   --white: #FFFFFF;
+   /* Pure white — overlays only */
+
+   /* Functional Aliases */
+   --bg-primary: var(--canvas);
+   --bg-section: var(--smoke);
+   --bg-dark: var(--void);
+   --bg-accent: var(--signal);
+   --text-primary: var(--ink);
+   --text-secondary: var(--steel);
+   --text-muted: #8A8680;
+   --text-on-dark: var(--canvas);
+   --border: var(--wire);
+   --accent: var(--signal);
+   --accent-hover: var(--signal-muted);
+
+   /* Elliot Index (market terminal section) */
+   --index-bg: #0E0E0E;
+   --index-border: #2A2A2A;
+   --index-positive: #C0001A;
+   --index-neutral: #F8F7F5;
+   --index-label: #5A5A5A;
+
+   /* Overlays */
+   --overlay-hero: rgba(13, 13, 13, 0.35);
+   /* Hero image gradient base */
+   --overlay-dark: rgba(13, 13, 13, 0.72);
+   /* Founder portrait overlay */
+   --overlay-card: rgba(13, 13, 13, 0.08);
+   /* Card hover tint */
+
+   /* ----------------------------------------------------------
+     TYPOGRAPHY — FAMILIES
+  ---------------------------------------------------------- */
+
+   --font-display: 'Cormorant Garamond', 'Cormorant', Georgia, serif;
+   --font-ui: 'Figtree', 'DM Sans', sans-serif;
+   --font-body: 'Literata', Georgia, serif;
+   --font-mono: 'DM Mono', 'Courier New', monospace;
+
+   /* ----------------------------------------------------------
+     TYPOGRAPHY — SCALE
+     Base: 16px. Scale: 1.25 (Major Third) with editorial jumps
+  ---------------------------------------------------------- */
+
+   --text-xs: 0.75rem;
+   /* 12px  — micro labels, copyright */
+   --text-sm: 0.875rem;
+   /* 14px  — captions, tags */
+   --text-base: 1rem;
+   /* 16px  — body copy */
+   --text-md: 1.125rem;
+   /* 18px  — large body */
+   --text-lg: 1.25rem;
+   /* 20px  — lead text */
+   --text-xl: 1.5rem;
+   /* 24px  — sub-headlines */
+   --text-2xl: 2rem;
+   /* 32px  — section intros */
+   --text-3xl: 2.5rem;
+   /* 40px  — H3 display */
+   --text-4xl: 3.5rem;
+   /* 56px  — H2 display */
+   --text-5xl: 5rem;
+   /* 80px  — H1 desktop */
+   --text-6xl: 6rem;
+   /* 96px  — Hero headline */
+   --text-hero: clamp(3rem, 8vw, 6rem);
+   /* Fluid hero headline */
+   --text-opening: clamp(2rem, 5vw, 4rem);
+   /* About opening statement */
+
+   /* Mobile overrides applied at breakpoints */
+   --text-hero-mobile: 3rem;
+   /* 48px */
+   --text-h1-mobile: 2.5rem;
+   /* 40px */
+
+   /* ----------------------------------------------------------
+     TYPOGRAPHY — WEIGHTS
+  ---------------------------------------------------------- */
+
+   --weight-light: 300;
+   --weight-regular: 400;
+   --weight-medium: 500;
+   --weight-semibold: 600;
+   --weight-bold: 700;
+
+   /* ----------------------------------------------------------
+     TYPOGRAPHY — LINE HEIGHTS
+  ---------------------------------------------------------- */
+
+   --leading-tight: 1.1;
+   /* Display headlines */
+   --leading-snug: 1.3;
+   /* Sub-headlines */
+   --leading-normal: 1.5;
+   /* UI text */
+   --leading-relaxed: 1.75;
+   /* Body copy — editorial rhythm */
+   --leading-loose: 2;
+   /* Captions, breathing room */
+
+   /* ----------------------------------------------------------
+     TYPOGRAPHY — TRACKING (letter-spacing)
+  ---------------------------------------------------------- */
+
+   --tracking-tight: -0.03em;
+   --tracking-normal: 0;
+   --tracking-caps: 0.15em;
+   /* All-caps labels — always use this */
+   --tracking-wide: 0.08em;
+   --tracking-mono: 0.02em;
+   /* DM Mono for readability */
+
+   /* ----------------------------------------------------------
+     SPACING — 8pt base grid
+  ---------------------------------------------------------- */
+
+   --space-1: 0.25rem;
+   /* 4px */
+   --space-2: 0.5rem;
+   /* 8px */
+   --space-3: 0.75rem;
+   /* 12px */
+   --space-4: 1rem;
+   /* 16px */
+   --space-5: 1.25rem;
+   /* 20px */
+   --space-6: 1.5rem;
+   /* 24px */
+   --space-8: 2rem;
+   /* 32px */
+   --space-10: 2.5rem;
+   /* 40px */
+   --space-12: 3rem;
+   /* 48px */
+   --space-16: 4rem;
+   /* 64px */
+   --space-20: 5rem;
+   /* 80px */
+   --space-24: 6rem;
+   /* 96px */
+   --space-32: 8rem;
+   /* 128px */
+   --space-40: 10rem;
+   /* 160px */
+   --space-48: 12rem;
+   /* 192px */
+
+   /* Section vertical padding */
+   --section-padding-y: clamp(4rem, 8vw, 8rem);
+   --section-padding-x: clamp(1.5rem, 5vw, 4rem);
+
+   /* ----------------------------------------------------------
+     LAYOUT
+  ---------------------------------------------------------- */
+
+   --max-width: 1280px;
+   --max-width-narrow: 960px;
+   --max-width-text: 680px;
+   /* Max readable text column */
+   --container-padding: clamp(1.5rem, 5vw, 4rem);
+   --grid-columns: 12;
+   --grid-gap: clamp(1rem, 2vw, 1.5rem);
+
+   /* ----------------------------------------------------------
+     BREAKPOINTS (reference — use in media queries)
+  ---------------------------------------------------------- */
+
+
+   --bp-mobile: 480px --bp-tablet: 768px --bp-laptop: 1024px --bp-desktop: 1280px --bp-wide: 1536px
+      /* ----------------------------------------------------------
+     BORDERS & RADIUS
+  ---------------------------------------------------------- */
+
+      --radius-none: 0;
+   --radius-sm: 2px;
+   --radius-md: 4px;
+   --radius-lg: 8px;
+   --radius-full: 9999px;
+
+   /* Property cards — intentionally minimal radius */
+   --card-radius: 2px;
+
+   /* ----------------------------------------------------------
+     SHADOWS
+  ---------------------------------------------------------- */
+
+   --shadow-sm: 0 1px 3px rgba(13, 13, 13, 0.06);
+   --shadow-md: 0 4px 16px rgba(13, 13, 13, 0.08);
+   --shadow-lg: 0 8px 32px rgba(13, 13, 13, 0.12);
+   --shadow-card: 0 2px 12px rgba(13, 13, 13, 0.07);
+   --shadow-card-hover: 0 12px 40px rgba(13, 13, 13, 0.14);
+   --shadow-nav: 0 1px 0 var(--wire), 0 4px 16px rgba(13, 13, 13, 0.06);
+
+   /* ----------------------------------------------------------
+     Z-INDEX SCALE
+  ---------------------------------------------------------- */
+
+   --z-below: -1;
+   --z-base: 0;
+   --z-raised: 10;
+   --z-dropdown: 100;
+   --z-sticky: 200;
+   --z-nav: 300;
+   --z-overlay: 400;
+   --z-modal: 500;
+   --z-cursor: 9999;
+   --z-page-transition: 10000;
+
+   /* ----------------------------------------------------------
+     TRANSITIONS & EASING
+  ---------------------------------------------------------- */
+
+   /* Durations */
+   --duration-instant: 100ms;
+   --duration-fast: 200ms;
+   --duration-normal: 300ms;
+   --duration-slow: 500ms;
+   --duration-slower: 700ms;
+   --duration-sluggish: 1000ms;
+   --duration-cinematic: 1200ms;
+
+   /* Easing */
+   --ease-linear: linear;
+   --ease-in: cubic-bezier(0.4, 0, 1, 1);
+   --ease-out: cubic-bezier(0, 0, 0.2, 1);
+   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+   /* Slight overshoot */
+   --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+   /* Expo out — luxury feel */
+   --ease-editorial: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+   /* Common transitions */
+   --transition-colors: color var(--duration-fast) var(--ease-out),
+      background-color var(--duration-fast) var(--ease-out),
+      border-color var(--duration-fast) var(--ease-out);
+   --transition-transform: transform var(--duration-normal) var(--ease-premium);
+   --transition-opacity: opacity var(--duration-normal) var(--ease-out);
+   --transition-all: all var(--duration-normal) var(--ease-out);
+   --transition-shadow: box-shadow var(--duration-normal) var(--ease-out);
+
+   /* ----------------------------------------------------------
+     ANIMATION — SPECIFIC TIMINGS
+  ---------------------------------------------------------- */
+
+   /* Hero stagger */
+   --hero-word-stagger: 80ms;
+   --hero-fade-duration: 600ms;
+
+   /* Page transition */
+   --page-wipe-duration: 400ms;
+
+   /* SVG draw-in */
+   --svg-draw-duration: 1200ms;
+   --svg-draw-stagger: 100ms;
+
+   /* Odometer roll */
+   --odometer-duration: 800ms;
+   --odometer-stagger: 50ms;
+
+   /* Card hover */
+   --card-drawer-duration: 300ms;
+   --card-zoom-duration: 400ms;
+   --card-border-duration: 600ms;
+
+   /* Cursor lag (lerp factor — not CSS, reference for JS) */
+   --cursor-lerp: 0.15;
+   /* 15% per frame — premium lag */
+
+   /* Pulse animation (Nigeria map dots) */
+   --pulse-duration: 2s;
+   --pulse-stagger: 200ms;
+
+   /* ----------------------------------------------------------
+     NAV
+  ---------------------------------------------------------- */
+
+   --nav-height: 72px;
+   --nav-height-mobile: 60px;
+   --nav-blur: blur(8px);
+   --nav-bg-transparent: transparent;
+   --nav-bg-solid: rgba(248, 247, 245, 0.95);
+
+   /* ----------------------------------------------------------
+     PROPERTY CARD
+  ---------------------------------------------------------- */
+
+   --card-image-height: 260px;
+   --card-image-height-large: 380px;
+   --card-drawer-height: 100px;
+
+   /* ----------------------------------------------------------
+     CURSOR
+  ---------------------------------------------------------- */
+
+   --cursor-size: 24px;
+   --cursor-color: var(--signal);
+   --cursor-hover-scale: 1.4;
+
+   /* ----------------------------------------------------------
+     SVG OPACITIES
+  ---------------------------------------------------------- */
+
+   --svg-grid-opacity: 0.04;
+   --svg-topo-opacity: 0.05;
+   --svg-topo-footer-opacity: 0.03;
+   --svg-watermark-opacity: 0.04;
+
+   /* ----------------------------------------------------------
+     ELLIOT INDEX
+  ---------------------------------------------------------- */
+
+   --index-scanline-opacity: 0.03;
+   --index-ticker-speed: 30s;
+
+}
+
+/* ============================================================
+   DARK SECTION OVERRIDES
+   Applied to sections with class .section--dark or bg-void
+============================================================ */
+.section--dark,
+[data-theme="dark"] {
+   --text-primary: var(--canvas);
+   --text-secondary: #A09C97;
+   --text-muted: #6B6762;
+   --border: #2A2A2A;
+   --bg-primary: var(--void);
+}
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+@media (prefers-reduced-motion: reduce) {
+   :root {
+      --duration-instant: 0ms;
+      --duration-fast: 0ms;
+      --duration-normal: 0ms;
+      --duration-slow: 0ms;
+      --duration-slower: 0ms;
+      --duration-sluggish: 0ms;
+      --duration-cinematic: 0ms;
+      --page-wipe-duration: 0ms;
+      --svg-draw-duration: 0ms;
+      --odometer-duration: 0ms;
+      --card-drawer-duration: 0ms;
+      --pulse-duration: 0ms;
+   }
+}
+
+
+
+*, *::before, *::after {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+html {
+   font-size: 16px;
+   scroll-behavior: smooth;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   text-rendering: optimizeLegibility;
+}
+
+body {
+   background-color: var(--white);
+   color: var(--ink);
+   font-family: var(--font-body);
+   line-height: var(--leading-relaxed);
+   overflow-x: hidden;
+}
+
+img, video, svg {
+   display: block;
+   max-width: 100%;
+}
+
+a {
+   text-decoration: none;
+}
+
+button {
+   background: none;
+   border: none;
+   cursor: none;
+   /* custom cursor handles this */
+   font: inherit;
+}
+
+ul, ol {
+   list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+   font-weight: var(--weight-regular);
+   line-height: var(--leading-tight);
+}
+
+input, textarea, select {
+   font: inherit;
+   background: none;
+   border: none;
+   outline: none;
+   appearance: none;
+}
+
+::selection {
+   background-color: var(--signal);
+   color: var(--white);
+}

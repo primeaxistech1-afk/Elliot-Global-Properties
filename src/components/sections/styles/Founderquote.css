@@ -1,0 +1,328 @@
+/* ============================================================
+   ELLIOT GLOBAL — FOUNDER QUOTE  (v3)
+   FounderQuote.css
+   ============================================================ */
+
+/* ─── Section ────────────────────────────────────────────────────────────── */
+.fq {
+    position: relative;
+    min-height: clamp(520px, 75vh, 780px);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: var(--void);
+    padding: 0% var(--container-padding);
+}
+
+/* ─── Background ─────────────────────────────────────────────────────────── */
+.fq__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    display: none;
+    background-color: var(--void);
+}
+
+.fq__portrait-placeholder {
+    width: 150%;
+    height: 100%;
+    border-radius: 1rem;
+}
+
+.fq__portrait {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    filter: grayscale(25%) contrast(1.05) ;
+}
+
+
+/* ─── Decorative layers ──────────────────────────────────────────────────── */
+.fq__topo {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+
+/* ─── Desktop layout ─────────────────────────────────────────────────────── */
+.fq__inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: clamp(48px, 8vw, 108px);
+    align-items: center;
+    padding-block: clamp(72px, 11vh, 112px);
+}
+
+/* ─── Left column ────────────────────────────────────────────────────────── */
+.fq__left {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.75s var(--ease-premium), transform 0.75s var(--ease-premium);
+}
+
+.fq__left--in {
+    opacity: 1;
+    transform: none;
+}
+
+.fq__left-mark {
+    color: var(--signal);
+}
+
+.fq__left-label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-left: 2px solid rgba(192, 0, 26, 0.4);
+    padding-left: 18px;
+}
+
+.fq__label-tag {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--signal);
+}
+
+.fq__label-name {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+    font-weight: 400;
+    color: var(--canvas);
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+}
+
+.fq__label-title {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    color: rgba(248, 247, 245, 0.38);
+    line-height: 1.6;
+}
+
+/* ─── Right column ───────────────────────────────────────────────────────── */
+.fq__right {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.fq__mark {
+    font-family: var(--font-display);
+    font-size: clamp(5rem, 10vw, 9rem);
+    font-weight: 700;
+    line-height: 0.65;
+    color: var(--signal);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.5s var(--ease-premium) 0.1s,
+        transform 0.5s var(--ease-premium) 0.1s;
+}
+
+.fq__mark--in {
+    opacity: 1;
+    transform: none;
+}
+
+.fq__quote {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.fq__quote-text {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: clamp(1.75rem, 3.2vw, 3rem);
+    font-weight: 200;
+    font-style: italic;
+    line-height: 1.35;
+    letter-spacing: -0.025em;
+    color: var(--canvas);
+}
+
+.fq__word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.45s var(--ease-premium),
+        transform 0.45s var(--ease-premium);
+}
+
+.fq__word--in {
+    opacity: 1;
+    transform: none;
+}
+
+.fq__attr {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.5s var(--ease-premium) 0.85s,
+        transform 0.5s var(--ease-premium) 0.85s;
+}
+
+.fq__attr--in {
+    opacity: 1;
+    transform: none;
+}
+
+.fq__attr-rule {
+    display: block;
+    width: 32px;
+    height: 1px;
+    background-color: var(--signal);
+    flex-shrink: 0;
+}
+
+.fq__attr-text {
+    font-family: var(--font-mono);
+    font-size: 16px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(248, 247, 245, 0.45);
+}
+
+.fq__bottom-accent {
+    width: 0;
+    height: 1px;
+    transition: width 1.1s var(--ease-premium) 1.1s;
+}
+
+.fq__bottom-accent--in {
+    width: 100%;
+}
+
+.fq__coordinate {
+    position: absolute;
+    bottom: clamp(18px, 3vh, 32px);
+    right: var(--container-padding);
+    z-index: 2;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(248, 247, 245, 0.14);
+}
+
+/* ─── MOBILE ─────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .fq {
+     padding:  var(--container-padding);
+        min-height: min(100svh, 780px);
+        align-items: flex-end;
+    }
+
+
+    .fq__inner {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding-top: 0;
+        padding-bottom: max(44px, calc(env(safe-area-inset-bottom) + 28px));
+    }
+
+    .fq__right {
+        order: 1;
+        gap: 16px;
+    }
+
+    .fq__left {
+        order: 2;
+    }
+
+
+    .fq__mark {
+        font-size: clamp(4rem, 18vw, 6.5rem);
+        margin-bottom: -4px;
+    }
+
+
+    .fq__quote-text {
+        font-size: clamp(1.25rem, 5vw, 1.65rem);
+        line-height: 1.38;
+    }
+
+    .fq__attr-text {
+        font-size: 14px;
+    }
+
+    .fq__bottom-accent {
+        display: none;
+    }
+
+    /* Attribution pill */
+    .fq__left {
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+        margin-top: 24px;
+        padding: 14px 18px;
+        border: 1px solid rgba(192, 0, 26, 0.22);
+        border-radius: 2px;
+    }
+
+    .fq__left-mark {
+        display: none;
+    }
+
+    .fq__left-label {
+        border-left: 1px solid rgba(192, 0, 26, 0.3);
+        padding-left: 16px;
+        gap: 4px;
+    }
+
+    .fq__label-tag {
+        font-size: 14px;
+    }
+
+    .fq__label-name {
+        font-size: clamp(1rem, 4.5vw, 1.25rem);
+    }
+
+    .fq__label-title {
+        font-size: 14px;
+    }
+
+    .fq__coordinate {
+        display: none;
+    }
+}
+
+/* ─── Tiny phones ────────────────────────────────────────────────────────── */
+@media (max-width: 390px) {
+    .fq__quote-text {
+        font-size: 1.2rem;
+        line-height: 1.4;
+    }
+
+    .fq__mark {
+        font-size: clamp(3.5rem, 16vw, 5rem);
+    }
+}
+
+/* ─── Reduced motion ─────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    .fq__left, .fq__mark, .fq__word, .fq__attr {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .fq__bottom-accent {
+        width: 60% !important;
+        transition: none !important;
+    }
+}

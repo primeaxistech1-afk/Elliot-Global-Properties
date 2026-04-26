@@ -1,0 +1,425 @@
+/* ============================================================
+   ELLIOT GLOBAL — HOME ABOUT SECTION  (v3)
+   HomeAbout.css
+   ============================================================ */
+
+/* ─── Shared reveal ──────────────────────────────────────────────────────── */
+.ha--in {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* ─── Section ────────────────────────────────────────────────────────────── */
+.ha {
+    background-color: var(--canvas);
+    padding-bottom: 0;
+    overflow: hidden;
+    padding: 0% var(--container-padding);
+
+}
+
+/* ─── Header ─────────────────────────────────────────────────────────────── */
+.ha__header {
+    padding-top: clamp(64px, 10vw, 112px);
+    padding-bottom: 0;
+}
+
+.ha__header-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 7vw, 100px);
+    align-items: end;
+    padding-bottom: clamp(40px, 6vw, 64px);
+
+}
+
+.ha__header-copy {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.7s var(--ease-premium), transform 0.7s var(--ease-premium);
+}
+
+.ha__header-right {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.7s var(--ease-premium), transform 0.7s var(--ease-premium);
+}
+
+/* Eyebrow */
+.ha__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-family: var(--font-ui);
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--signal);
+    margin-bottom: 16px;
+}
+
+.ha__eyebrow-rule {
+    display: block;
+    width: 26px;
+    height: 1px;
+    background-color: var(--signal);
+    flex-shrink: 0;
+}
+
+/* Headline */
+.ha__headline {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+}
+
+/* Lead */
+.ha__lead {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    line-height: var(--leading-relaxed);
+    color: var(--text-secondary);
+    margin-bottom: clamp(24px, 3.5vw, 40px);
+    max-width: 480px;
+}
+
+/* CTA */
+.ha__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.ha__cta::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--signal);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s var(--ease-premium);
+}
+
+.ha__cta:hover::after {
+    transform: scaleX(1);
+}
+
+.ha__cta:hover .ha__cta-arrow {
+    transform: translateX(7px);
+}
+
+.ha__cta-arrow {
+    color: var(--signal);
+    transition: transform 0.3s var(--ease-premium);
+}
+
+/* Header bottom rule */
+.ha__header-rule {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, var(--signal) 0%, var(--wire) 35%, transparent 100%);
+}
+
+/* ─── Three pillars ──────────────────────────────────────────────────────── */
+.ha__pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-block: clamp(52px, 9vw, 96px);
+    border-bottom: 1px solid var(--wire);
+    position: relative;
+}
+
+.ha__pillar {
+    padding: clamp(28px, 3.5vw, 48px);
+    border-right: 1px solid var(--wire);
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s var(--ease-premium), transform 0.65s var(--ease-premium);
+    position: relative;
+    overflow: hidden;
+}
+
+.ha__pillar:first-child {
+    padding-left: 0;
+}
+
+.ha__pillar:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+
+.ha__pillar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--signal);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s var(--ease-premium);
+}
+
+.ha__pillar:hover::after {
+    transform: scaleX(1);
+}
+
+.ha__pillar-num {
+    position: absolute;
+    top: clamp(16px, 2.5vw, 32px);
+    right: clamp(12px, 1.8vw, 24px);
+    font-family: var(--font-display);
+    font-size: clamp(4.5rem, 8vw, 8rem);
+    font-weight: 700;
+    color: var(--ink);
+    opacity: 0.045;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    pointer-events: none;
+    user-select: none;
+}
+
+.ha__pillar-rule {
+    width: 28px;
+    height: 2px;
+    background-color: var(--signal);
+    margin-bottom: clamp(18px, 2.5vw, 28px);
+}
+
+.ha__pillar-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 2.4vw, 2rem);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: clamp(14px, 2vw, 22px);
+}
+
+.ha__pillar-body {
+    font-family: var(--font-body);
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
+    line-height: var(--leading-relaxed);
+    color: var(--text-secondary);
+}
+
+/* ─── Scroll-dot indicators — desktop: hidden ────────────────────────────── */
+.ha__pillars-dots {
+    display: none;
+}
+
+
+/* ─── TABLET 768–1024px ──────────────────────────────────────────────────── */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .ha__header-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .ha__pillars {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .ha__pillar {
+        border-right: none;
+        border-bottom: 1px solid var(--wire);
+        padding: clamp(28px, 5vw, 44px) 0;
+    }
+
+    .ha__pillar:last-child {
+        border-bottom: none;
+    }
+
+
+
+    .ha__figure:nth-child(2) {
+        border-right: none;
+    }
+
+    .ha__figure:nth-child(1),
+    .ha__figure:nth-child(2) {
+        border-bottom: 1px solid rgba(209, 205, 198, 0.1);
+    }
+}
+
+/* ─── MOBILE ─────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .ha__header {
+        padding-top: clamp(48px, 10vw, 72px);
+    }
+
+    /* Tighter gap: headline and lead are one logical unit on mobile */
+    .ha__header-inner {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding-bottom: clamp(28px, 6vw, 44px);
+    }
+
+    .ha__headline {
+        font-size: clamp(2.2rem, 9vw, 3.2rem);
+        line-height: 1.05;
+    }
+
+    .ha__lead {
+        font-size: clamp(0.95rem, 4vw, 1.05rem);
+        max-width: 100%;
+    }
+
+    /* ── Pillars: horizontal scroll ──────────────────────────────────────── */
+    .ha__pillars {
+        grid-template-columns: unset;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 0;
+        padding-block: clamp(32px, 7vw, 52px);
+        border-bottom: 1px solid var(--wire);
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .ha__pillars::-webkit-scrollbar {
+        display: none;
+    }
+
+    /*
+      Cards are 72vw wide (was 80vw) — the larger visible bleed of the next
+      card (28vw peek) makes the scroll affordance obvious without any text hint.
+    */
+    .ha__pillar {
+        flex: 0 0 72vw;
+        min-height: 220px;
+        scroll-snap-align: start;
+        border-right: 1px solid var(--wire);
+        border-bottom: none;
+        padding: clamp(24px, 5vw, 36px);
+    }
+
+    .ha__pillar:first-child {
+        padding-left: clamp(24px, 5vw, 36px);
+    }
+
+    .ha__pillar:last-child {
+        flex: 0 0 72vw;
+        padding-right: clamp(24px, 5vw, 36px);
+        border-right: none;
+    }
+
+    .ha__pillar-title {
+        font-size: clamp(1.3rem, 5.5vw, 1.7rem);
+    }
+
+    .ha__pillar-body {
+        font-size: 0.92rem;
+    }
+
+    .ha__pillar-num {
+        font-size: clamp(4rem, 18vw, 6rem);
+        opacity: 0.05;
+    }
+
+    /* ── Scroll-dot indicators: visible on mobile only ───────────────────── */
+    .ha__pillars-dots {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+        padding-top: 14px;
+        padding-bottom: 2px;
+    }
+
+    .ha__pillars-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: var(--wire);
+        transition: background-color 0.25s ease, transform 0.25s ease;
+    }
+
+    .ha__pillars-dot--active {
+        background-color: var(--signal);
+        transform: scale(1.3);
+    }
+
+}
+
+/* ─── Narrow phones: single-column figures ───────────────────────────────── */
+@media (max-width: 420px) {
+    .ha__figures-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .ha__figure {
+        border-right: none;
+        border-bottom: 1px solid rgba(209, 205, 198, 0.1);
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 0;
+    }
+
+    .ha__figure:last-child {
+        border-bottom: none;
+    }
+
+    /* On single-column, figures sit side-by-side: value left, label right */
+    .ha__figure-value {
+        font-size: clamp(2rem, 9vw, 2.6rem);
+    }
+
+    .ha__figure-label {
+        text-align: right;
+        font-size: 10px;
+        max-width: 120px;
+    }
+}
+
+/* ─── Tiny phones ────────────────────────────────────────────────────────── */
+@media (max-width: 390px) {
+    .ha__pillar {
+        flex: 0 0 84vw;
+    }
+
+    .ha__headline {
+        font-size: 2rem;
+    }
+}
+
+/* ─── Reduced motion ─────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+
+    .ha__header-copy, .ha__header-right,
+    .ha__pillar, .ha__figure {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .ha__pillars {
+        overflow-x: visible;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .ha__pillars-dots {
+        display: none;
+    }
+}
